@@ -1,0 +1,132 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+$black: #3b3b3b;
+$background: #DEC7D9;
+$bloc: #EFE4EC;
+$primary2: #20d2c6;
+$secondary2: #8cf6ae;
+
+.container {
+  background-color: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+.bloc {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: $bloc;
+  box-shadow: 0px 5px 10px #b6adb2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.formGroup {
+  position: relative;
+  padding: 20px 0px 0px;
+  margin-top: 10px;
+  width: 60%;
+
+}
+
+.formField {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.4s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .formLabel {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.formField {
+  -moz-appearance:textfield;
+}
+
+.formField::-webkit-outer-spin-button,
+.formField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.formLabel {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $black;
+}
+
+.formField:focus {
+  ~ .formLabel {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.formField{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+.img {
+  transform: rotate(90deg);
+}
+
+.currencyContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currencySelect {
+  margin-top: 20px;
+  width: 60%;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight:700;
+  border: none;
+  background-color: $bloc;
+}
+
+.currencySelect:focus {
+  outline: none;
+  color: $black;
+  background-image: linear-gradient(to left, $primary2,$secondary2);
+  //border-image-slice: 1;
+}
